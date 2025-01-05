@@ -6,3 +6,4 @@ export { Habit } from './habit';
 export { DeleteHabit } from './deleteHabit';
 export { HabitForm } from './habitForm';
 export { EditHabit } from './editHabit';
+export { Settings } from './settings';

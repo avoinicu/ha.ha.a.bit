@@ -22,6 +22,10 @@ export const getDateFromDateNumber = (dayNumber: number, year?: number) => {
   return dayjs(`${year}-01-01`).add(dayNumber - firstDay, 'day');
 };
 
+export const START_OF_WEEK = { 'Sunday': 0, 'Monday': 1 } as const;
+
+export const THEMES = ['system', 'light', 'dark'] as const;
+
 export const COLORS = [
   'slate',
   'gray',

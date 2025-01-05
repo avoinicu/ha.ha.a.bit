@@ -23,6 +23,7 @@ const DeleteHabit = ({ habitId }: { habitId: string }) => {
     >
       <DialogTrigger asChild>
         <Button
+          className="text-inherit hover:text-inherit"
           variant="outline"
           size="icon"
         >

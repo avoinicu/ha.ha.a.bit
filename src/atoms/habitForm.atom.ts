@@ -1,6 +1,6 @@
-import { atom } from 'jotai';
+import { atomWithReset } from 'jotai/utils';
 
 import { EMPTY_HABIT } from '~/lib/constants';
 import type { THabit } from '~/types';
 
-export const habitFormAtom = atom<THabit>(EMPTY_HABIT);
+export const habitFormAtom = atomWithReset<THabit>(EMPTY_HABIT);

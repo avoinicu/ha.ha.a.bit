@@ -1,15 +1,14 @@
-import '@radix-ui/react-select';
 import { useAtom } from 'jotai';
+import { RESET } from 'jotai/utils';
 import { Edit } from 'lucide-react';
 import { useState } from 'react';
 
 import { habitFormAtom } from '~/atoms/habitForm.atom';
 import { habitsAtom } from '~/atoms/habits.atom';
-import { EMPTY_HABIT } from '~/lib/constants';
 import { Button } from '~ui/button';
 import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '~ui/dialog';
 
-import { HabitForm } from './habitForm';
+import { HabitForm } from '~/components/habitForm';
 
 const EditHabit = ({ habitId }: { habitId: string }) => {
   const [habits, saveHabit] = useAtom(habitsAtom);
@@ -19,7 +18,7 @@ const EditHabit = ({ habitId }: { habitId: string }) => {
   const handleOpenEdit = (open: boolean) => {
     if (!open) {
       setOpen(false);
-      setFormData(EMPTY_HABIT);
+      setFormData(RESET);
     } else {
       const habitToEdit = habits.find((habit) => habit.id === habitId);
       setFormData(habitToEdit!);
@@ -43,13 +42,14 @@ const EditHabit = ({ habitId }: { habitId: string }) => {
     >
       <DialogTrigger asChild>
         <Button
+          className="text-inherit hover:text-inherit"
           variant="outline"
           size="icon"
         >
           <Edit className="h-[1.2rem] w-[1.2rem]" />
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent aria-describedby={undefined}>
         <DialogHeader>
           <DialogTitle>Edit habit</DialogTitle>
         </DialogHeader>

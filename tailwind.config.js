@@ -5,7 +5,8 @@ export default {
   safelist: [
     {
       pattern:
-        /^(bg|text)-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|)-(100|200|800|900)$/,
+        /^(bg|text|border)-(slate|gray|zinc|neutral|stone|red|orange|amber|yellow|lime|green|emerald|teal|cyan|sky|blue|indigo|violet|purple|fuchsia|pink|rose|)-(50|[1-9]00|950)$/,
+      variants: ['dark', 'hover', 'focus', 'active'],
     },
   ],
   theme: {

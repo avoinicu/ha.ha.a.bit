@@ -1,15 +1,13 @@
-import '@radix-ui/react-select';
 import { useAtom, useSetAtom } from 'jotai';
+import { RESET } from 'jotai/utils';
 import { Plus } from 'lucide-react';
 import { useState } from 'react';
 
 import { habitFormAtom } from '~/atoms/habitForm.atom';
 import { habitsAtom } from '~/atoms/habits.atom';
-import { EMPTY_HABIT } from '~/lib/constants';
+import { HabitForm } from '~/components/habitForm';
 import { Button } from '~ui/button';
 import { Dialog, DialogClose, DialogContent, DialogFooter, DialogHeader, DialogTitle, DialogTrigger } from '~ui/dialog';
-
-import { HabitForm } from './habitForm';
 
 const AddHabit = () => {
   const addHabit = useSetAtom(habitsAtom);
@@ -32,7 +30,7 @@ const AddHabit = () => {
   const handleOpenChange = (open: boolean) => {
     if (!open) {
       setOpen(false);
-      setFormData(EMPTY_HABIT);
+      setFormData(RESET);
     } else {
       setOpen(true);
     }
@@ -51,7 +49,7 @@ const AddHabit = () => {
           <Plus className="h-[1.2rem] w-[1.2rem]" />
         </Button>
       </DialogTrigger>
-      <DialogContent>
+      <DialogContent aria-describedby={undefined}>
         <DialogHeader>
           <DialogTitle>Add a new habit</DialogTitle>
         </DialogHeader>
