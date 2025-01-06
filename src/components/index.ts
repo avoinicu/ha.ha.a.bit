@@ -7,3 +7,5 @@ export { DeleteHabit } from './deleteHabit';
 export { HabitForm } from './habitForm';
 export { EditHabit } from './editHabit';
 export { Settings } from './settings';
+export { Welcome } from './welcome';
+export { Footer } from './footer';
